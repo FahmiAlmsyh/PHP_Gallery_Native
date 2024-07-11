@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gallery</title>
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -36,7 +36,7 @@
                 <?php
                 $imagePath = "foto_galeri/" . $row['foto'];
                 if (file_exists($imagePath)) {
-                    echo '<img src="' . $imagePath . '" style="width: 50px">';
+                    echo '<img src="' . $imagePath . '" style="width: 150px">';
                 } else {
                     echo "Image not found: " . $imagePath;
                 }
@@ -44,6 +44,10 @@
             </td>
       <td><?php echo $row['judul_foto']; ?></td>
       <td><?php echo $row['ket_foto']; ?></td>
+      <td style="width:5%;">
+                            <a href="edit.php?ID=<?php echo $row['id_galeri'] ?>" class="btn btn-outline-primary"><i
+                                    class="fa-solid fa-pen"></i></a>
+                        </td>
             <td style="width:5%">
             <a href="delete.php?ID=<?php echo $row['id_galeri'] ?>" class="btn btn-outline-danger"><i
             class="fa-solid fa-check"></i></a>
