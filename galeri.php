@@ -18,7 +18,7 @@
         <form action="insert.php" enctype="multipart/form-data" method="post">
             <div class="mb-3">
                 <label for="" class="mb-2">Judul</label>
-                <input type="text" name="in_judul" class="form-control" placeholder="Judul apa yang mau anda masukkan"
+                <input required type="text" name="in_judul" class="form-control" placeholder="Judul apa yang mau anda masukkan"
                     aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
 
@@ -29,7 +29,7 @@
 
             <div class="mb-3">
                 <label for="" class="mb-2">Keterangan</label>
-                <input type="text" class="form-control" placeholder="Keterangan apa yang mau anda masukkan"
+                <input required type="text" class="form-control" placeholder="Keterangan apa yang mau anda masukkan"
                     aria-label="Sizing example input" name="in_ket" aria-describedby="inputGroup-sizing-default">
             </div>
 
