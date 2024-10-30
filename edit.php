@@ -16,6 +16,8 @@ include ('config.php');
 $ID = $_GET['ID'];
 $getdata = mysqli_query($connect, "SELECT * FROM list WHERE id_galeri='$ID'");
 $row = mysqli_fetch_array($getdata);
+
+$dateValue = date('Y-m-d', strtotime($row['tanggal']));
 ?>
 
 <body>
@@ -35,6 +37,19 @@ $row = mysqli_fetch_array($getdata);
                 <p><img src="foto_galeri/<?php echo $row['foto'] ?>" style="width: 150px"></p>
                 <label for="inputGroupFile01">Upload</label>
                 <input type="file" name="in_foto" class="form-control" id="inputGroupFile01">
+            </div>
+
+            <div class="mb-3">
+                <select class="form-select" name="select" id="selectMenu" aria-label="Default select example">
+                    <option value="1" <?php if ($row['select'] == 1) echo 'selected'; ?>>One</option>
+                    <option value="2" <?php if ($row['select'] == 2) echo 'selected'; ?>>Two</option>
+                    <option value="3" <?php if ($row['select'] == 3) echo 'selected'; ?>>Three</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="">Tanggal</label>
+                <input type="date" name="tanggal" value="<?php echo $dateValue?>">
             </div>
 
             <div class="mb-3">
